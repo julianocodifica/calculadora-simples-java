@@ -4,6 +4,7 @@ void main() {
     double num1, num2;
     double result;
     Scanner scan = new Scanner(System.in);
+    scan.useLocale(java.util.Locale.US);
     String recomeçar = "S";
     System.out.println("Bem vindo à minha calculadora simples.");
     // Loop do programa para caso o usuário queira fazer outra operação, ignorando se é maiúsculo ou minúsculo.
@@ -14,6 +15,7 @@ void main() {
             System.out.println("Erro: Isso não é um número válido! Tente novamente:");
             scan.nextLine();
         }
+
         num1 = scan.nextDouble();
         scan.nextLine(); // Limpa o buffer do Enter após o nextInt().
         System.out.println("Qual operação você quer realizar? (+, -, x, /)");
