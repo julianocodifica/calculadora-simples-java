@@ -5,10 +5,10 @@ void main() {
     double result;
     Scanner scan = new Scanner(System.in);
     scan.useLocale(java.util.Locale.US);
-    String recomeçar = "S";
+    String recomecar = "S";
     System.out.println("Bem vindo à minha calculadora simples.");
     // Loop do programa para caso o usuário queira fazer outra operação, ignorando se é maiúsculo ou minúsculo.
-    while (recomeçar.equalsIgnoreCase("S")) {
+    while (recomecar.equalsIgnoreCase("S")) {
         System.out.println("Digite o primeiro número:");
         // Validação se o que foi digitado é um int.
         while (!scan.hasNextDouble()) {
@@ -19,13 +19,13 @@ void main() {
         num1 = scan.nextDouble();
         scan.nextLine(); // Limpa o buffer do Enter após o nextInt().
         System.out.println("Qual operação você quer realizar? (+, -, x, /)");
-        String operaçao = scan.nextLine();
+        String operacao = scan.nextLine();
         // Validação se o que foi digitado é exatamente uma das operações possíveis. Se não for, volta desde o começo.
-        if(!operaçao.matches("[+x/-]")) {
+        if(!operacao.matches("[+x/-]")) {
             System.out.println("Operação inválida. Tentando novamente.");
             continue;
         }
-        switch(operaçao) {
+        switch(operacao) {
             case "+":
                 System.out.println("Digite o número pelo qual você quer somar o primeiro:");
                 // Validação se é um int.
@@ -70,21 +70,20 @@ void main() {
                 scan.nextLine();
                 if (num2 == 0) {
                     System.out.println("Não é possível dividir por zero!");
-                    break;
                 }
                 else{
                     result = num1 / num2;
                     System.out.println("O resultado da divisão é: " + result);
-                    break;
                 }
+                break;
 
         }
         System.out.println("Você quer fazer outra operação? (S, N)");
-        recomeçar = scan.nextLine();
+        recomecar = scan.nextLine();
         // Validação para caso o usuário coloque algo diferente de S ou N.
-        while(!recomeçar.matches("[SsNn]")){
+        while(!recomecar.matches("[SsNn]")){
             System.out.println("Comando errado. Você quer fazer outra operação? (S = Sim, N = Não)");
-            recomeçar = scan.nextLine();
+            recomecar = scan.nextLine();
         }
     }
     System.out.println("Obrigado por usar minha calculadora :)");
